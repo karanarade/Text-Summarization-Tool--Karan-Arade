@@ -7,7 +7,32 @@ import streamlit as st
 from Text_Summarization.Summarization import summarize_text
 
 
+st.set_page_config(
+    page_title="Text Summarization Tool",
+    page_icon="📝",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
+with st.sidebar:
+    st.header("About")
+    st.write(
+        "This tool uses Natural Language Processing (NLP) to generate concise summaries of long articles or paragraphs. "
+        "Simply paste your text, select the number of sentences for the summary, and click 'Summarize'."
+    )
+    st.markdown("---")
+    st.write("Developed by Karan Arade")
+
+st.markdown(
+    """
+    <style>
+    .stTextArea textarea {font-size: 1.1em;}
+    .stSlider {margin-bottom: 20px;}
+    .stButton button {background-color: #4CAF50; color: white;}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 st.title("📝 Text Summarization Tool")
 st.markdown("Summarize lengthy articles using NLP")
